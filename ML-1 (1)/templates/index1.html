@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ML Model Prediction</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #50586C;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    backdrop-filter: blur(100px);
+}
+
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    background-image: url('bg.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 0 20px;
+    background-color: #DCE2F0;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    width: 45%;
+}
+
+select, input[type="number"] {
+    width: 50%;
+    padding: 10px;
+    margin: 0 100px 0 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+</style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Enter Input Values for ML Model</h2>
+    <form action="/predict" method="post">
+        <div class="form-group">
+            <label for="input1">Time (sec):</label>
+            <input type="number" id="input1" name="Time" required>
+        </div>
+
+        <div class="form-group">
+            <label for="input2">Amount:</label>
+            <input type="number" step="any" id="input2" name="Amount" required>
+        </div>
+
+        <div class="form-group">
+            <label for="input3">Transaction Type:</label>
+            <select id="input3" name="Transaction_Type" required>
+                <option value="1">CASH_IN</option>
+                <option value="2">TRANSFER</option>
+                <option value="3">CASH_OUT</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="input4">Origin Amount:</label>
+            <input type="number" step="any" id="input4" name="Origin_Account" required>
+        </div>
+
+        <div class="form-group">
+            <label for="input5">Destination Account:</label>
+            <input type="number" step="any" id="input5" name="Destination_Account" required>
+        </div>
+
+        <input type="submit" value="Predict">
+    </form>
+</div>
+
+</body>
+</html>

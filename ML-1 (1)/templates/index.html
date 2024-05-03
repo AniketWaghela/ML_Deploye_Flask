@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ML Model Prediction Dashboard</title>
+<style>
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f9fc;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.header {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    position: relative;
+}
+
+.name_bar {
+    font-size: 24px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.login-button {
+    background-color: #5A9E6E;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 18px;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.button {
+    background-color: #5A9E6E;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 35px;
+    cursor: pointer;
+    font-size: 20px;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #4A8D5A;
+}
+
+.section {
+    margin-top: 50px;
+    padding-bottom: 40px;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #5A9E6E;
+    position: relative;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #5A9E6E;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-content p {
+    font-size: 18px;
+    color: #777;
+    flex: 1;
+}
+
+.section-content img {
+    max-width: 55%;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h1>ML Model Prediction Dashboard</h1>
+    <!-- <div class="name_bar">Welcome, User</div> -->
+    <button class="login-button" onclick="window.location.href='/login'">Login/Sign Up</button>
+</div>
+
+<div class="container">
+    <div class="section">
+        <h6 class="section-title">Introducing Our Online Payment Fraud Detection System</h6>
+        <div class="section-content">
+            <p>Our newly developed machine learning model employs cutting-edge technology to safeguard your online transactions. By analyzing various transaction parameters, such as transaction amount, type, and timing, our system can accurately detect potential fraudulent activities in real-time. With our robust fraud detection system in place, you can enjoy peace of mind while conducting transactions online.</p>
+            <img src="https://example.com/path/to/work_image.jpg" alt="My Work Image">
+        </div>
+    </div>
+    
+    <div class="section">
+        <h4 class="section-title">Enhancing Business Security with Advanced Fraud Prevention</h4>
+        <div class="section-content">
+            <p>Protect your business from the threats of online payment fraud with our state-of-the-art machine learning solution. Our cutting-edge model utilizes sophisticated decision tree classification algorithms to detect suspicious transactions with unparalleled accuracy. By seamlessly integrating our solution into your business operations, you can effectively mitigate the risks associated with fraudulent activities, ensuring a secure and reliable payment environment for your valued customers.</p>
+            <img src="https://example.com/path/to/model_image.jpg" alt="How Model Works Image">
+        </div>
+    </div>
+    
+    
+
+</div>
+
+</body>
+</html>

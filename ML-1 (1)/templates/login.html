@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fc;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            text-align: center;
+            position: relative;
+            overflow: hidden; /* Ensure hidden overflow for sliding effect */
+        }
+
+        .form-container {
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+
+        .form-section {
+            width: 50%;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .form-section h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="submit"] {
+            width: calc(100% - 40px);
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .error,
+        .success {
+            margin-top: 20px;
+            color: #333;
+        }
+
+        .action-button {
+            background-color: #4285F4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 0;
+            cursor: pointer;
+            margin-top: 20px;
+            width: calc(100% - 40px);
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .action-button:hover {
+            background-color: #357ae8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="form-section login">
+                <h1>Login</h1>
+                <form action="/login" method="post">
+                    <input type="text" name="username" placeholder="Username" required><br>
+                    <input type="password" name="password" placeholder="Password" required><br>
+                    <input type="submit" value="Login">
+                </form>
+            </div>
+
+            <div class="form-section signup" style="transform: translateX(100%)">
+                <h1>Signup</h1>
+                <form action="/signup" method="post">
+                    <input type="text" name="username" placeholder="Username" required><br>
+                    <input type="email" name="email" placeholder="Email" required><br>
+                    <input type="password" name="password" placeholder="Password" required><br>
+                    <input type="submit" value="Signup">
+                </form>
+            </div>
+        </div>
+
+        <button class="action-button" onclick="toggleSignup()">Signup</button>
+
+        {% if error %}
+        <div class="error">{{ error }}</div>
+        {% endif %}
+
+        {% if success %}
+        <div class="success">{{ success }}</div>
+        {% endif %}
+      
+    </div>
+
+    <script>
+        function toggleSignup() {
+            const loginForm = document.querySelector('.login');
+            const signupForm = document.querySelector('.signup');
+            const actionButton = document.querySelector('.action-button');
+            
+            if (loginForm.style.transform === 'translateX(0%)') {
+                loginForm.style.transform = 'translateX(-100%)';
+                signupForm.style.transform = 'translateX(0%)';
+                actionButton.textContent = 'Login';
+            } else {
+                loginForm.style.transform = 'translateX(0%)';
+                signupForm.style.transform = 'translateX(100%)';
+                actionButton.textContent = 'Signup';
+            }
+        }
+    </script>
+</body>
+</html>

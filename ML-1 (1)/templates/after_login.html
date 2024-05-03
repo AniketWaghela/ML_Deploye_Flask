@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Model Prediction Dashboard</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f9fc;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 1em;
+            text-align: center;
+            position: relative;
+        }
+
+        .name_bar {
+            font-size: 24px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .user-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #5A9E6E;
+            position: absolute;
+            top: 15px;
+            right: 10px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .button {
+            background-color: #5A9E6E;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 35px;
+            cursor: pointer;
+            font-size: 20px;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #4A8D5A;
+        }
+
+        .section {
+            margin-top: 50px;
+            padding-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 25px;
+            color: #5A9E6E;
+            position: relative;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #5A9E6E;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .logout-button {
+            background-color: #FF6347;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            position: absolute;
+            top: 15px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>ML Model Prediction Dashboard</h1>
+    <div class="name_bar">Welcome, {{ username }}</div>
+    <div class="user-icon"></div>
+    <form action="/logout" method="post">
+        
+        <button type="submit" class="logout-button">Logout</button>
+    </form>
+    <button class="button" onclick="window.location.href='/predict_page'">Predict Your Data</button>
+</div>
+
+
+
+
+<div class="container">
+    <div class="section">
+        <h2 class="section-title">User Data</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Amount</th>
+                    <th>Transaction Type</th>
+                    <th>Origin Account</th>
+                    <th>Destination Account</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                <tr>
+                    <td>{{ row[2] }}</td> <!-- Assuming Time is in the second column (index 1) -->
+                    <td>{{ row[3] }}</td> <!-- Assuming Amount is in the third column (index 2) -->
+                    <td>{{ row[4] }}</td> <!-- Assuming Transaction_Type is in the fourth column (index 3) -->
+                    <td>{{ row[5] }}</td> <!-- Assuming Origin_Account is in the fifth column (index 4) -->
+                    <td>{{ row[6] }}</td> <!-- Assuming Destination_Account is in the sixth column (index 5) -->
+                    <td>{{ row[7] }}</td> <!-- Assuming Result is in the seventh column (index 6) -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="section">
+        <h6 class="section-title">Introducing Our Online Payment Fraud Detection System</h6>
+        <div class="section-content">
+            <p>Our newly developed machine learning model employs cutting-edge technology to safeguard your online transactions. By analyzing various transaction parameters, such as transaction amount, type, and timing, our system can accurately detect potential fraudulent activities in real-time. With our robust fraud detection system in place, you can enjoy peace of mind while conducting transactions online.</p>
+            <img src="https://example.com/path/to/work_image.jpg" alt="My Work Image">
+        </div>
+    </div>
+    
+    <div class="section">
+        <h4 class="section-title">Enhancing Business Security with Advanced Fraud Prevention</h4>
+        <div class="section-content">
+            <p>Protect your business from the threats of online payment fraud with our state-of-the-art machine learning solution. Our cutting-edge model utilizes sophisticated decision tree classification algorithms to detect suspicious transactions with unparalleled accuracy. By seamlessly integrating our solution into your business operations, you can effectively mitigate the risks associated with fraudulent activities, ensuring a secure and reliable payment environment for your valued customers.</p>
+            <img src="https://example.com/path/to/model_image.jpg" alt="How Model Works Image">
+        </div>
+    </div>
+      
+    
+
+</div>
+
+</body>
+</html>
